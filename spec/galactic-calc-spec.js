@@ -54,4 +54,16 @@ describe('Birthday', function(){
     expect(myBDay.getAgeInYearsOnPlanet("Jupiter")).toEqual('You are 0 years old on planet Jupiter');
   })
 
+  it('should correctly return time left in seconds', function(){
+    const d = new Date();
+    const myBDay = new Birthday(d);
+    expect(myBDay.getEstimatedTimeLeftInSeconds("Male")).toEqual((68.34*31557600));
+  })
+
+  it('should correctly return time left in seconds', function(){
+    const d = new Date();
+    const myBDay = new Birthday(d);
+    expect(myBDay.calculateTimeInYearsAndDays(31557600)).toEqual("1 years and 0 days");
+  })
+
 })

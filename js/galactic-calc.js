@@ -44,5 +44,43 @@ export class Birthday {
     return "You are " + years + " years old on planet " + planet;
   }
 
+  getEstimatedTimeLeftInSeconds(gender){
+    let multiplier = 0;
+    if(gender == "Male"){
+      multiplier = 68.34;
+    }else if(gender == "Female"){
+      multiplier = 72.67;
+    }else{
+      multiplier = 71.5;
+    }
+    let seconds = this.getSecondsLived();
+    let timeLeft = (multiplier * 31557600) - seconds;
+    return timeLeft;
+  }
+
+  calculateTimeInYearsAndDays(seconds){
+    let x = seconds % 31557600;
+    let years = (seconds - x)/31557600;
+    let y = x % 86400;
+    let days = (x - y)/86400;
+    return years + " years and " + days + " days";
+  }
+
+  // // calculateTimeOnPlanet(seconds, planet){
+  // //   let multiplier = 0;
+  // //   if(planet == "Mercury"){
+  // //     multiplier = .24;
+  // //   }else if(planet == "Venus"){
+  // //     multiplier = .62;
+  // //   }else if(planet == "Mars"){
+  // //     multiplier = 1.88;
+  // //   }else if(planet == "Jupiter"){
+  // //     multiplier = 11.88;
+  // //   }else{
+  // //     multiplier = 1;
+  // //   }
+  // //   return (seconds * multiplier);
+  // // }
+  //
 
 }
