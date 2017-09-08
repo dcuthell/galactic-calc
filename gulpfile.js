@@ -19,6 +19,7 @@ const lib = require('bower-files')({
   }
 });
 const browserSync = require('browser-sync').create();
+const babelify = require("babelify");
 
 
 
@@ -27,10 +28,13 @@ gulp.task('echo', function(){
 });
 
 gulp.task('jsBrowserify', ['concatInterface'], function() {
-  return browserify({ entries: ['./tmp/allConcat.js'] })
+  return browserify({ entries: ['./tmp/allConcat.js']})
+    .transform(babelify.configure({
+      presets: ["es2015"]
+    }))
     .bundle()
     .pipe(source('app.js'))
-    .pipe(gulp.dest('./build/js'));
+    .pipe(gulp.dest('./build/js'))
 });
 
 gulp.task('concatInterface', function() {
