@@ -5,6 +5,10 @@ export class Birthday {
 
   getSecondsLived(){
     let totalMilli = this.bDate.getTime();
-    return (totalMilli * 1000);
+    let currentDate = new Date();
+    let elapsedTime = currentDate.getTime() - totalMilli;
+    return (elapsedTime / 1000);
   }
+
+
 }
