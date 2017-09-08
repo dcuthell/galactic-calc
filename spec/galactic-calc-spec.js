@@ -30,4 +30,28 @@ describe('Birthday', function(){
     expect(myBDay.getAgeInYearsAndDays()).toEqual('You are 0 years and 0 days old');
   })
 
+  it('should correctly return an age in Mercury years', function(){
+    const d = new Date();
+    const myBDay = new Birthday(d);
+    expect(myBDay.getAgeInYearsOnPlanet("Mercury")).toEqual('You are 0 years old on planet Mercury');
+  })
+
+  it('should correctly return an age in Venus years', function(){
+    const d = new Date();
+    const myBDay = new Birthday(d);
+    expect(myBDay.getAgeInYearsOnPlanet("Venus")).toEqual('You are 0 years old on planet Venus');
+  })
+
+  it('should correctly return an age in Mars years', function(){
+    const d = new Date();
+    const myBDay = new Birthday(d);
+    expect(myBDay.getAgeInYearsOnPlanet("Mars")).toEqual('You are 0 years old on planet Mars');
+  })
+
+  it('should correctly return an age in Jupiter years', function(){
+    const d = new Date();
+    const myBDay = new Birthday(d);
+    expect(myBDay.getAgeInYearsOnPlanet("Jupiter")).toEqual('You are 0 years old on planet Jupiter');
+  })
+
 })
