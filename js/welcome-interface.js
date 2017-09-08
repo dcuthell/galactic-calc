@@ -1,13 +1,4 @@
 $(document).ready(function(){
-  $("#options").hide();
-  
-});
-
-$(document).ready(function(){
-  $('#time').text(moment());
-});
-
-$(document).ready(function(){
   $('#bday-input').submit(function(event){
     event.preventDefault();
     $("#welcome").hide();
