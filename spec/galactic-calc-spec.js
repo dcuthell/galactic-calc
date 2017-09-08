@@ -66,4 +66,22 @@ describe('Birthday', function(){
     expect(myBDay.calculateTimeInYearsAndDays(31557600)).toEqual("1 years and 0 days");
   })
 
+  it('should correctly return a number of seconds in Jupiter time', function(){
+    const d = new Date();
+    const myBDay = new Birthday(d);
+    expect(myBDay.calculateTimeOnPlanet(1000, "Jupiter")).toEqual(84.1751);
+  })
+
+  it('should correctly return years and days left to live on a planet', function(){
+    const d = new Date();
+    const myBDay = new Birthday(d);
+    expect(myBDay.calculateTimeLeftOnPlanet("Male", "Jupiter")).toEqual("You have 5.7525 years left to live on planet Jupiter");
+  })
+
+  it('should correctly determine if the expected age has been surpassed', function(){
+    const d = new Date("October 13, 1914 11:13:00");
+    const myBDay = new Birthday(d);
+    expect(myBDay.isDead()).toEqual(true);
+  })
+
 })

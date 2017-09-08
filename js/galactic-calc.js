@@ -66,21 +66,37 @@ export class Birthday {
     return years + " years and " + days + " days";
   }
 
-  // // calculateTimeOnPlanet(seconds, planet){
-  // //   let multiplier = 0;
-  // //   if(planet == "Mercury"){
-  // //     multiplier = .24;
-  // //   }else if(planet == "Venus"){
-  // //     multiplier = .62;
-  // //   }else if(planet == "Mars"){
-  // //     multiplier = 1.88;
-  // //   }else if(planet == "Jupiter"){
-  // //     multiplier = 11.88;
-  // //   }else{
-  // //     multiplier = 1;
-  // //   }
-  // //   return (seconds * multiplier);
-  // // }
-  //
+  calculateTimeOnPlanet(seconds, planet){
+    let multiplier = 0;
+    if(planet == "Mercury"){
+      multiplier = .24;
+    }else if(planet == "Venus"){
+      multiplier = .62;
+    }else if(planet == "Mars"){
+      multiplier = 1.88;
+    }else if(planet == "Jupiter"){
+      multiplier = 11.88;
+    }else{
+      multiplier = 1;
+    }
+    return Number((seconds / multiplier).toFixed(4));
+  }
+
+  calculateTimeLeftOnPlanet(gender, planet){
+    let earthSeconds = this.getEstimatedTimeLeftInSeconds(gender);
+    let planetSeconds = this.calculateTimeOnPlanet(earthSeconds, planet);
+    let planetYears = Number((planetSeconds/31557600).toFixed(4));
+    return "You have " + planetYears + " years left to live on planet " + planet;
+  }
+
+  isDead(gender){
+    let timeLeft = this.getEstimatedTimeLeftInSeconds(gender);
+    if(timeLeft <= 0){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
 
 }
