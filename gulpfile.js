@@ -6,6 +6,7 @@ const uglify = require('gulp-uglify');
 const utilities = require('gulp-util');
 const buildProduction = utilities.env.production;
 const del = require('del');
+const jshint = require('gulp-jshint');
 
 
 gulp.task('echo', function(){
@@ -41,4 +42,10 @@ gulp.task("build", ['clean'], function(){
 
 gulp.task("clean", function(){
   return del(['build', 'tmp']);
+});
+
+gulp.task('jshint', function(){
+  return gulp.src(['js/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });
