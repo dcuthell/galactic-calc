@@ -8,7 +8,6 @@ $(document).ready(function(){
   $("#difference-results").hide();
   $("#planet-age-results").hide();
   $("#life-expectancy-results").hide();
-  $("#refresh-life-expectancy").hide();
 
   let myDate = null;
   let myBirthday = null;
@@ -64,7 +63,7 @@ $(document).ready(function(){
   $('#submit-planet-input').click(function(){
     let planetSelection = $("input[name=planet-radio]:checked").attr("value");
     console.log(planetSelection);
-    $("#planet-age-results").text(myBirthday.getAgeInYearsOnPlanet(planetSelection));
+    $("#planet-age-results-field").text(myBirthday.getAgeInYearsOnPlanet(planetSelection));
     $("#planet-age-results").show();
     $("#planet-selector").hide();
     $("#refresh-planet-age").show();
@@ -91,7 +90,7 @@ $(document).ready(function(){
     $("#life-expectancy-results").show();
     $("#planet-selector2").hide();
     $("#gender-selector").hide();
-    $("#refresh-planet-age").show();
+    $("#refresh-life-expectancy").show();
   });
 
   $("#refresh-life-expectancy").click(function(){
