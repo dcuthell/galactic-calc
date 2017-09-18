@@ -26,10 +26,13 @@
           <div class="well">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title">Your Age in Time</h3>
+                <h3 class="panel-title">How Many Seconds?</h3>
               </div>
               <div class="panel-body">
-                Panel content
+                <ul>
+                  <li id="age-in-seconds"></li>
+                  <button type="button" id="refresh-age-seconds" class="btn btn-info">Refresh</button>
+                </ul>
               </div>
             </div>
           </div>
@@ -38,10 +41,20 @@
           <div class="well">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
+                <h3 class="panel-title">What's the Difference?</h3>
               </div>
               <div class="panel-body">
-                Panel content
+                <form id="another-date-input">
+                  <div class="form-group">
+                    <h3>Please enter a date</h3>
+                    <input type="date" name="another-date"><br>
+                  </div>
+                  <button type="submit" class="btn btn-info">Calculate</button>
+                </form>
+                <ul>
+                  <li id="difference-results"></li>
+                  <button type="button" id="refresh-age-difference" class="btn btn-info">Refresh</button>
+                </ul>
               </div>
             </div>
           </div>
@@ -50,24 +63,111 @@
           <div class="well">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
+                <h3 class="panel-title">How old am I?</h3>
               </div>
               <div class="panel-body">
-                Panel content
+                <div id="planet-selector">
+                  <h3>Select a Planet</h3>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="planet-radio" id="mercury-radio" value="Mercury" checked>
+                      Mercury
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="planet-radio" id="venus-radio" value="Venus">
+                      Venus
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="planet-radio" id="mars-radio" value="Mars">
+                      Mars
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="planet-radio" id="jupiter-radio" value="Jupiter">
+                      Jupiter
+                    </label>
+                  </div>
+                  <button type="button" id="submit-planet-input" class="btn btn-info">Calculate</button>
+                </div>
+                <div id="planet-age-results">
+                  <ul>
+                    <li id="planet-age-results"></li>
+                  </ul>
+                  <button type="button" id="refresh-planet-age" class="btn btn-info">Refresh</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-8">
           <div class="well">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
+                <h3 class="panel-title">How long will I live?</h3>
               </div>
               <div class="panel-body">
-                Panel content
+                <div id="planet-selector2">
+                  <h3>Select a Planet</h3>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="planet-radio2" id="mercury-radio" value="Mercury" checked>
+                      Mercury
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="planet-radio2" id="venus-radio" value="Venus">
+                      Venus
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="planet-radio2" id="mars-radio" value="Mars">
+                      Mars
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="planet-radio2" id="jupiter-radio" value="Jupiter">
+                      Jupiter
+                    </label>
+                  </div>
+                </div>
+                <div id="gender-selector">
+                  <h3>Select a Gender</h3>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="gender-radio" id="none-radio" value="None" checked>
+                      None
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="gender-radio" id="male-radio" value="Male">
+                      Male
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="gender-radio" id="female-radio" value="Female">
+                      Female
+                    </label>
+                  </div>
+                  <button type="button" id="submit-life-expectancy-input" class="btn btn-info">Calculate</button>
+                </div>
+                <div id="life-expectancy-results">
+                  <ul>
+                    <li id="expectancy-results"></li>
+                  </ul>
+                  <button type="button" id="refresh-life-expectancy" class="btn btn-info">Refresh</button>
+                </div>
               </div>
             </div>
           </div>
@@ -76,45 +176,13 @@
           <div class="well">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
+                <h3 class="panel-title">Should I be alive?</h3>
               </div>
               <div class="panel-body">
-                Panel content
+                <p id="dead-or-alive"></p>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="well">
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
-              </div>
-              <div class="panel-body">
-                Panel content
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid" id="selections">
-      <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6">
-          <div class="well">
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
-              </div>
-              <div class="panel-body">
-                Panel content
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
         </div>
       </div>
     </div>

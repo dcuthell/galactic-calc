@@ -1,6 +1,8 @@
 export class Birthday {
-  constructor(bDate){
-    this.bDate = bDate;
+  constructor(aBDate){
+
+    this.bDate = new Date(aBDate.getTime());
+    console.log(this.bDate, "Success!s");
   }
 
   getSecondsLived(){
@@ -29,9 +31,9 @@ export class Birthday {
   getAgeInYearsOnPlanet(planet){
     let multiplier = 0;
     if(planet == "Mercury"){
-      multiplier = .24;
+      multiplier = 0.24;
     }else if(planet == "Venus"){
-      multiplier = .62;
+      multiplier = 0.62;
     }else if(planet == "Mars"){
       multiplier = 1.88;
     }else if(planet == "Jupiter"){
@@ -69,9 +71,9 @@ export class Birthday {
   calculateTimeOnPlanet(seconds, planet){
     let multiplier = 0;
     if(planet == "Mercury"){
-      multiplier = .24;
+      multiplier = 0.24;
     }else if(planet == "Venus"){
-      multiplier = .62;
+      multiplier = 0.62;
     }else if(planet == "Mars"){
       multiplier = 1.88;
     }else if(planet == "Jupiter"){
@@ -99,4 +101,4 @@ export class Birthday {
   }
 
 
-}
+};
